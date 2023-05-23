@@ -7,10 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +26,8 @@ public class HelloController implements Initializable {
         nameDe.setCellValueFactory(new PropertyValueFactory<Lignes, String>("nameDe"));
         latitude.setCellValueFactory(new PropertyValueFactory<Lignes, String>("latitude"));
         longitude.setCellValueFactory(new PropertyValueFactory<Lignes, String>("longitude"));
+
+        File file = new File("students.txt");
 
         List<List<String>> csv = parse();
 
